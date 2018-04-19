@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lu1ffy.springboot.dao.BbsOrderMapper">
+  <resultMap id="BaseResultMap" type="com.lu1ffy.springboot.model.BbsOrder">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="deliver_fee" jdbcType="REAL" property="deliverFee" />
+    <result column="total_fee" jdbcType="REAL" property="totalFee" />
+    <result column="order_price" jdbcType="REAL" property="orderPrice" />
+    <result column="payment_way" jdbcType="BIT" property="paymentWay" />
+    <result column="payment_cash" jdbcType="BIT" property="paymentCash" />
+    <result column="delivery" jdbcType="BIT" property="delivery" />
+    <result column="is_confirm" jdbcType="BIT" property="isConfirm" />
+    <result column="is_paiy" jdbcType="BIT" property="isPaiy" />
+    <result column="order_state" jdbcType="BIT" property="orderState" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="note" jdbcType="VARCHAR" property="note" />
+    <result column="buyer_id" jdbcType="VARCHAR" property="buyerId" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from bbs_order
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lu1ffy.springboot.model.BbsOrder">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into bbs_order (deliver_fee, total_fee, order_price, 
+      payment_way, payment_cash, delivery, 
+      is_confirm, is_paiy, order_state, 
+      create_date, note, buyer_id
+      )
+    values (#{deliverFee,jdbcType=REAL}, #{totalFee,jdbcType=REAL}, #{orderPrice,jdbcType=REAL}, 
+      #{paymentWay,jdbcType=BIT}, #{paymentCash,jdbcType=BIT}, #{delivery,jdbcType=BIT}, 
+      #{isConfirm,jdbcType=BIT}, #{isPaiy,jdbcType=BIT}, #{orderState,jdbcType=BIT}, 
+      #{createDate,jdbcType=TIMESTAMP}, #{note,jdbcType=VARCHAR}, #{buyerId,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.lu1ffy.springboot.model.BbsOrder">
+    update bbs_order
+    set deliver_fee = #{deliverFee,jdbcType=REAL},
+      total_fee = #{totalFee,jdbcType=REAL},
+      order_price = #{orderPrice,jdbcType=REAL},
+      payment_way = #{paymentWay,jdbcType=BIT},
+      payment_cash = #{paymentCash,jdbcType=BIT},
+      delivery = #{delivery,jdbcType=BIT},
+      is_confirm = #{isConfirm,jdbcType=BIT},
+      is_paiy = #{isPaiy,jdbcType=BIT},
+      order_state = #{orderState,jdbcType=BIT},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      note = #{note,jdbcType=VARCHAR},
+      buyer_id = #{buyerId,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, deliver_fee, total_fee, order_price, payment_way, payment_cash, delivery, 
+    is_confirm, is_paiy, order_state, create_date, note, buyer_id
+    from bbs_order
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, deliver_fee, total_fee, order_price, payment_way, payment_cash, delivery, 
+    is_confirm, is_paiy, order_state, create_date, note, buyer_id
+    from bbs_order
+  </select>
+</mapper>

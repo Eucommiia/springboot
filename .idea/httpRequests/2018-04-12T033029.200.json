@@ -1,0 +1,88 @@
+{
+  "pageNum": 1,
+  "pageSize": 8,
+  "size": 8,
+  "orderBy": null,
+  "startRow": 0,
+  "endRow": 7,
+  "total": 8,
+  "pages": 1,
+  "list": [
+    {
+      "id": 1,
+      "userName": "李艾",
+      "passWord": "1234",
+      "email": "liai@qq.com",
+      "phone": "1",
+      "roleName": "客户经理"
+    },
+    {
+      "id": 2,
+      "userName": "李清照",
+      "passWord": "1234",
+      "email": "liqingzhao@qq.com",
+      "phone": "3",
+      "roleName": "高管"
+    },
+    {
+      "id": 3,
+      "userName": "杜甫",
+      "passWord": "1234",
+      "email": "dufu@qq.com",
+      "phone": "5",
+      "roleName": "销售主管"
+    },
+    {
+      "id": 4,
+      "userName": "岑参",
+      "passWord": "1234",
+      "email": "censhen@qq.com",
+      "phone": "2",
+      "roleName": "瓜里源"
+    },
+    {
+      "id": 5,
+      "userName": "陈子昂",
+      "passWord": "1234",
+      "email": "cenziang@qq.com",
+      "phone": "9",
+      "roleName": "高管"
+    },
+    {
+      "id": 6,
+      "userName": "贝尔",
+      "passWord": "1234",
+      "email": "ql@qq.com",
+      "phone": "1008611",
+      "roleName": "球员"
+    },
+    {
+      "id": 7,
+      "userName": "拉莫斯",
+      "passWord": "1234",
+      "email": "1@qq.com",
+      "phone": "1014",
+      "roleName": "队长"
+    },
+    {
+      "id": 8,
+      "userName": "C罗",
+      "passWord": "1234",
+      "email": "2@qq.com",
+      "phone": "10148",
+      "roleName": "射手"
+    }
+  ],
+  "firstPage": 1,
+  "prePage": 0,
+  "nextPage": 0,
+  "lastPage": 1,
+  "isFirstPage": true,
+  "isLastPage": true,
+  "hasPreviousPage": false,
+  "hasNextPage": false,
+  "navigatePages": 8,
+  "navigatepageNums": [
+    1
+  ]
+}

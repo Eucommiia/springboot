@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lu1ffy.springboot.dao.TbUserMapper">
+  <resultMap id="BaseResultMap" type="com.lu1ffy.springboot.model.TbUser">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="userName" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="roleName" jdbcType="VARCHAR" property="rolename" />
+    <result column="pass_word" jdbcType="VARCHAR" property="passWord" />
+    <result column="role_name" jdbcType="VARCHAR" property="roleName" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tb_user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.lu1ffy.springboot.model.TbUser">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into tb_user (userName, password, email, 
+      phone, roleName, pass_word, 
+      role_name, user_name)
+    values (#{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
+      #{phone,jdbcType=VARCHAR}, #{rolename,jdbcType=VARCHAR}, #{passWord,jdbcType=VARCHAR}, 
+      #{roleName,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.lu1ffy.springboot.model.TbUser">
+    update tb_user
+    set userName = #{username,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      roleName = #{rolename,jdbcType=VARCHAR},
+      pass_word = #{passWord,jdbcType=VARCHAR},
+      role_name = #{roleName,jdbcType=VARCHAR},
+      user_name = #{userName,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, userName, password, email, phone, roleName, pass_word, role_name, user_name
+    from tb_user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, userName, password, email, phone, roleName, pass_word, role_name, user_name
+    from tb_user
+  </select>
+</mapper>

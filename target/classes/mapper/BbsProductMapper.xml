@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lu1ffy.springboot.dao.BbsProductMapper">
+  <resultMap id="BaseResultMap" type="com.lu1ffy.springboot.model.BbsProduct">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="type_id" jdbcType="BIGINT" property="typeId" />
+    <result column="brand_id" jdbcType="BIGINT" property="brandId" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="weight" jdbcType="REAL" property="weight" />
+    <result column="is_new" jdbcType="BIT" property="isNew" />
+    <result column="is_hot" jdbcType="BIT" property="isHot" />
+    <result column="is_commend" jdbcType="BIT" property="isCommend" />
+    <result column="is_show" jdbcType="BIT" property="isShow" />
+    <result column="is_del" jdbcType="BIT" property="isDel" />
+    <result column="sales" jdbcType="INTEGER" property="sales" />
+    <result column="features" jdbcType="VARCHAR" property="features" />
+    <result column="colors" jdbcType="VARCHAR" property="colors" />
+    <result column="sizes" jdbcType="VARCHAR" property="sizes" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="check_time" jdbcType="TIMESTAMP" property="checkTime" />
+    <result column="create_user_id" jdbcType="VARCHAR" property="createUserId" />
+    <result column="check_user_id" jdbcType="VARCHAR" property="checkUserId" />
+    <result column="description" jdbcType="LONGVARCHAR" property="description" />
+    <result column="package_list" jdbcType="LONGVARCHAR" property="packageList" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from bbs_product
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lu1ffy.springboot.model.BbsProduct">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into bbs_product (type_id, brand_id, name, 
+      weight, is_new, is_hot, is_commend, 
+      is_show, is_del, sales, features, 
+      colors, sizes, create_time, 
+      check_time, create_user_id, check_user_id, 
+      description, package_list)
+    values (#{typeId,jdbcType=BIGINT}, #{brandId,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, 
+      #{weight,jdbcType=REAL}, #{isNew,jdbcType=BIT}, #{isHot,jdbcType=BIT}, #{isCommend,jdbcType=BIT}, 
+      #{isShow,jdbcType=BIT}, #{isDel,jdbcType=BIT}, #{sales,jdbcType=INTEGER}, #{features,jdbcType=VARCHAR}, 
+      #{colors,jdbcType=VARCHAR}, #{sizes,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{checkTime,jdbcType=TIMESTAMP}, #{createUserId,jdbcType=VARCHAR}, #{checkUserId,jdbcType=VARCHAR}, 
+      #{description,jdbcType=LONGVARCHAR}, #{packageList,jdbcType=LONGVARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.lu1ffy.springboot.model.BbsProduct">
+    update bbs_product
+    set type_id = #{typeId,jdbcType=BIGINT},
+      brand_id = #{brandId,jdbcType=BIGINT},
+      name = #{name,jdbcType=VARCHAR},
+      weight = #{weight,jdbcType=REAL},
+      is_new = #{isNew,jdbcType=BIT},
+      is_hot = #{isHot,jdbcType=BIT},
+      is_commend = #{isCommend,jdbcType=BIT},
+      is_show = #{isShow,jdbcType=BIT},
+      is_del = #{isDel,jdbcType=BIT},
+      sales = #{sales,jdbcType=INTEGER},
+      features = #{features,jdbcType=VARCHAR},
+      colors = #{colors,jdbcType=VARCHAR},
+      sizes = #{sizes,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      check_time = #{checkTime,jdbcType=TIMESTAMP},
+      create_user_id = #{createUserId,jdbcType=VARCHAR},
+      check_user_id = #{checkUserId,jdbcType=VARCHAR},
+      description = #{description,jdbcType=LONGVARCHAR},
+      package_list = #{packageList,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, type_id, brand_id, name, weight, is_new, is_hot, is_commend, is_show, 
+    is_del, sales, features, colors, sizes, create_time, check_time, create_user_id, 
+    check_user_id, description, package_list
+    from bbs_product
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, type_id, brand_id, name, weight, is_new, is_hot, is_commend, is_show, 
+    is_del, sales, features, colors, sizes, create_time, check_time, create_user_id, 
+    check_user_id, description, package_list
+    from bbs_product
+  </select>
+</mapper>

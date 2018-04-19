@@ -1,0 +1,82 @@
+16:49:06.698 industry-logback [restartedMain] INFO  c.l.springboot.SpringbootApplication - Starting SpringbootApplication on Lu1FFy with PID 14704 (C:\Users\Luffy\Desktop\springboot\target\classes started by Luffy in C:\Users\Luffy\Desktop\springboot)
+16:49:06.711 industry-logback [restartedMain] INFO  c.l.springboot.SpringbootApplication - The following profiles are active: dev
+16:49:06.873 industry-logback [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@56d79c0d: startup date [Mon Apr 09 16:49:06 CST 2018]; root of context hierarchy
+16:49:07.215 industry-logback [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.4.Final
+16:49:09.442 industry-logback [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$902cf148] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:49:09.944 industry-logback [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8082 (http)
+16:49:09.961 industry-logback [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service Tomcat
+16:49:09.962 industry-logback [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.11
+16:49:10.066 industry-logback [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:49:10.066 industry-logback [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3193 ms
+16:49:10.423 industry-logback [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+16:49:10.425 industry-logback [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'statViewServlet' to [/druid/*]
+16:49:10.432 industry-logback [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+16:49:10.432 industry-logback [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+16:49:10.433 industry-logback [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+16:49:10.433 industry-logback [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+16:49:10.433 industry-logback [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'webStatFilter' to urls: [/*]
+16:49:11.623 industry-logback [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@56d79c0d: startup date [Mon Apr 09 16:49:06 CST 2018]; root of context hierarchy
+16:49:11.695 industry-logback [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/demo]}" onto public java.lang.String com.lu1ffy.springboot.controller.SpringBootTest.test()
+16:49:11.696 industry-logback [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api]}" onto public com.alibaba.fastjson.JSONObject com.lu1ffy.springboot.controller.SpringBootTest.getAll()
+16:49:11.702 industry-logback [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+16:49:11.702 industry-logback [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+16:49:11.741 industry-logback [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+16:49:11.741 industry-logback [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+16:49:11.807 industry-logback [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+16:49:12.323 industry-logback [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+16:49:12.412 industry-logback [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+16:49:12.417 industry-logback [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+16:49:12.428 industry-logback [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+16:49:12.456 industry-logback [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
+16:49:12.478 industry-logback [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler [http-nio-8082]
+16:49:12.496 industry-logback [restartedMain] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+16:49:12.525 industry-logback [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8082 (http)
+16:49:12.535 industry-logback [restartedMain] INFO  c.l.springboot.SpringbootApplication - Started SpringbootApplication in 6.396 seconds (JVM running for 8.077)
+16:49:27.268 industry-logback [http-nio-8082-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+16:49:27.268 industry-logback [http-nio-8082-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+16:49:27.294 industry-logback [http-nio-8082-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 26 ms
+16:49:27.684 industry-logback [http-nio-8082-exec-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+16:49:27.692 industry-logback [http-nio-8082-exec-1] DEBUG c.l.s.dao.PersonMapper.queryAll - ==>  Preparing: SELECT * FROM tb_user 
+16:49:27.713 industry-logback [http-nio-8082-exec-1] DEBUG c.l.s.dao.PersonMapper.queryAll - ==> Parameters: 
+16:49:27.733 industry-logback [http-nio-8082-exec-1] DEBUG c.l.s.dao.PersonMapper.queryAll - <==      Total: 5
+18:16:57.887 industry-logback [restartedMain] INFO  c.l.springboot.SpringbootApplication - Starting SpringbootApplication on Lu1FFy with PID 5632 (C:\Users\Luffy\Desktop\springboot\target\classes started by Luffy in C:\Users\Luffy\Desktop\springboot)
+18:16:57.889 industry-logback [restartedMain] INFO  c.l.springboot.SpringbootApplication - The following profiles are active: dev
+18:16:58.003 industry-logback [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6bda7296: startup date [Mon Apr 09 18:16:58 CST 2018]; root of context hierarchy
+18:16:58.233 industry-logback [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.4.Final
+18:17:00.483 industry-logback [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f259dd83] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+18:17:00.907 industry-logback [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8082 (http)
+18:17:00.919 industry-logback [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service Tomcat
+18:17:00.920 industry-logback [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.11
+18:17:00.995 industry-logback [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+18:17:00.995 industry-logback [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2992 ms
+18:17:01.267 industry-logback [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+18:17:01.269 industry-logback [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'statViewServlet' to [/druid/*]
+18:17:01.273 industry-logback [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+18:17:01.273 industry-logback [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+18:17:01.274 industry-logback [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+18:17:01.274 industry-logback [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+18:17:01.274 industry-logback [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'webStatFilter' to urls: [/*]
+18:17:02.161 industry-logback [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6bda7296: startup date [Mon Apr 09 18:16:58 CST 2018]; root of context hierarchy
+18:17:02.218 industry-logback [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/demo]}" onto public java.lang.String com.lu1ffy.springboot.controller.SpringBootTest.test()
+18:17:02.219 industry-logback [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api]}" onto public com.alibaba.fastjson.JSONObject com.lu1ffy.springboot.controller.SpringBootTest.getAll()
+18:17:02.223 industry-logback [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+18:17:02.224 industry-logback [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+18:17:02.256 industry-logback [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+18:17:02.256 industry-logback [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+18:17:02.300 industry-logback [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+18:17:02.628 industry-logback [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+18:17:02.690 industry-logback [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+18:17:02.692 industry-logback [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+18:17:02.698 industry-logback [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+18:17:02.714 industry-logback [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
+18:17:02.725 industry-logback [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler [http-nio-8082]
+18:17:02.736 industry-logback [restartedMain] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+18:17:02.755 industry-logback [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8082 (http)
+18:17:02.760 industry-logback [restartedMain] INFO  c.l.springboot.SpringbootApplication - Started SpringbootApplication in 5.802 seconds (JVM running for 7.745)
+18:19:51.837 industry-logback [http-nio-8082-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+18:19:51.837 industry-logback [http-nio-8082-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+18:19:51.870 industry-logback [http-nio-8082-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 33 ms
+18:19:52.260 industry-logback [http-nio-8082-exec-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+18:19:52.267 industry-logback [http-nio-8082-exec-1] DEBUG c.l.s.dao.PersonMapper.queryAll - ==>  Preparing: SELECT * FROM tb_user 
+18:19:52.286 industry-logback [http-nio-8082-exec-1] DEBUG c.l.s.dao.PersonMapper.queryAll - ==> Parameters: 
+18:19:52.306 industry-logback [http-nio-8082-exec-1] DEBUG c.l.s.dao.PersonMapper.queryAll - <==      Total: 5

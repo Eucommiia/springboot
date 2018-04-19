@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lu1ffy.springboot.dao.Person1Mapper">
+   <resultMap id="BasePersonMap" type="com.lu1ffy.springboot.model.Person1">
+      <id column="id" property="id" jdbcType="INTEGER"/>
+      <result column="username" property="username" jdbcType="VARCHAR"/>
+      <result column="password" property="password" jdbcType="VARCHAR"/>
+      <result column="email" property="email" jdbcType="VARCHAR"/>
+      <result column="phone" property="phone" jdbcType="VARCHAR"/>
+      <result column="rolename" property="rolename" jdbcType="VARCHAR"/>
+   </resultMap>
+   <select id="queryAll" resultMap="BasePersonMap">
+        SELECT * FROM tb_user
+   </select>
+   <select id="queryList" resultType="com.lu1ffy.springboot.model.PersonVo">
+        SELECT id,username as nickname,password as pass from tb_user
+   </select>
+
+   <insert id="insertInto" parameterType="com.lu1ffy.springboot.model.Person1">
+      INSERT INTO tb_user
+      <trim prefix="(" suffix=")" suffixOverrides=",">
+         <if test="id!=null">
+            id,
+         </if>
+         <if test="username != null">
+            username,
+         </if>
+         <if test="passWord!=null">
+            passWord,
+         </if>
+         <if test="email !=null">
+            email,
+         </if>
+         <if test="phone !=null">
+            phone,
+         </if>
+         <if test="rolename!=null">
+            rolename,
+         </if>
+      </trim>
+      <trim prefix="values (" suffix=")" suffixOverrides=",">
+         <if test="id!=null">
+            #{id},
+         </if>
+         <if test="username!=null">
+            #{username},
+         </if>
+         <if test="password!=null">
+            #{password},
+         </if>
+         <if test="email!=null">
+            #{email},
+         </if>
+         <if test="phone!=null">
+            #{phone},
+         </if>
+         <if test="rolename!=null">
+            #{rolename},
+         </if>
+      </trim>
+   </insert>
+
+   <update id="updateDate" parameterType="com.lu1ffy.springboot.model.Person1">
+      UPDATE tb_user
+      <set>
+         <if test="username!=null">
+            username=#{username},
+         </if>
+         <if test="password!=null">
+            password=#{password},
+         </if>
+         <if test="email!=null">
+            email=#{email},
+         </if>
+         <if test="phone!=null">
+            phone=#{phone},
+         </if>
+         <if test="rolename!=null">
+            roleName=#{rolename},
+         </if>
+      </set>
+      WHERE id=#{id}
+   </update>
+
+   <!--分页查询-->
+   <select id="getListByLimit" resultMap="BasePersonMap">
+        SELECT * from tb_user
+   </select>
+
+   <!--
+   foreach元素的属性主要有 item，index，collection，open，separator，close。
+       item表示集合中每一个元素进行迭代时的别名，
+       index指 定一个名字，用于表示在迭代过程中，每次迭代到的位置，
+       open表示该语句以什么开始，
+       separator表示在每次进行迭代之间以什么符号作为分隔 符，
+       close表示以什么结束。
+   -->
+   <select id="query" resultMap="BasePersonMap">
+      SELECT * from tb_user WHERE id
+      IN
+      <foreach collection="array" index="index" item="item" open="(" close=")" separator=",">
+          #{item}
+      </foreach>
+   </select>
+</mapper>

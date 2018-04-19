@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lu1ffy.springboot.dao.BuildMapper">
+   <resultMap id="BaseResultMap" type="com.lu1ffy.springboot.model.BuildVo">
+      <result column="area" jdbcType="INTEGER" property="area"/>
+      <result column="pv" jdbcType="INTEGER" property="pv"/>
+      <result column="attribute" jdbcType="INTEGER" property="attribute"/>
+   </resultMap>
+   <select id="findAll" resultMap="BaseResultMap">
+          SELECT id,type as area, keshou as pv ,name as attribute FROM build
+   </select>
+</mapper>
+

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lu1ffy.springboot.dao.BbsEmployeeMapper">
+  <resultMap id="BaseResultMap" type="com.lu1ffy.springboot.model.BbsEmployee">
+    <id column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="degree" jdbcType="VARCHAR" property="degree" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="gender" jdbcType="INTEGER" property="gender" />
+    <result column="img_url" jdbcType="VARCHAR" property="imgUrl" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="real_name" jdbcType="VARCHAR" property="realName" />
+    <result column="school" jdbcType="VARCHAR" property="school" />
+    <result column="is_del" jdbcType="BIT" property="isDel" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from bbs_employee
+    where username = #{username,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.lu1ffy.springboot.model.BbsEmployee">
+    insert into bbs_employee (username, password, degree, 
+      email, gender, img_url, 
+      phone, real_name, school, 
+      is_del)
+    values (#{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{degree,jdbcType=VARCHAR}, 
+      #{email,jdbcType=VARCHAR}, #{gender,jdbcType=INTEGER}, #{imgUrl,jdbcType=VARCHAR}, 
+      #{phone,jdbcType=VARCHAR}, #{realName,jdbcType=VARCHAR}, #{school,jdbcType=VARCHAR}, 
+      #{isDel,jdbcType=BIT})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.lu1ffy.springboot.model.BbsEmployee">
+    update bbs_employee
+    set password = #{password,jdbcType=VARCHAR},
+      degree = #{degree,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      gender = #{gender,jdbcType=INTEGER},
+      img_url = #{imgUrl,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      real_name = #{realName,jdbcType=VARCHAR},
+      school = #{school,jdbcType=VARCHAR},
+      is_del = #{isDel,jdbcType=BIT}
+    where username = #{username,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select username, password, degree, email, gender, img_url, phone, real_name, school, 
+    is_del
+    from bbs_employee
+    where username = #{username,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select username, password, degree, email, gender, img_url, phone, real_name, school, 
+    is_del
+    from bbs_employee
+  </select>
+</mapper>
