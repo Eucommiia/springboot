@@ -1,6 +1,5 @@
 package com.lu1ffy.springboot.controller;
 
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.lu1ffy.springboot.dao.CustomerRepository;
 import com.lu1ffy.springboot.model.Build;
@@ -21,7 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Luffy
  * @create 2018/4/16 11:28
  */
-//@CrossOrigin(origins = "http://192.168.3.91:8082", maxAge = 3600)
 @RestController
 public class TestController {
 
